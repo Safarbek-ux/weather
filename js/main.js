@@ -23,6 +23,7 @@ const getdata = async (city) => {
 let id = 0;
 function weatherUI(data) {
     const divbody = document.createElement("div");
+    elDiv.appendChild(divbody);1
     divbody.setAttribute("class", "text-white bg-primary rounded p-5 d-flex justify-content-between mt-4");
     divbody.innerHTML = `
     <div>
@@ -32,7 +33,6 @@ function weatherUI(data) {
     </div>
     <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
     `
-    elDiv.appendChild(divbody);
 
     console.log(data);
 
