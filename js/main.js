@@ -9,10 +9,10 @@ const getdata = async (city) => {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
     elSearch.setAttribute("class", "");
     elSearch.innerHTML = "Search";
-    if(res.status === 404){
+    if (res.status === 404) {
         elInput.setAttribute("placeholder", "Shahar topilmadi");
         elInput.classList.add("wrong");
-    }else{
+    } else {
         elInput.setAttribute("placeholder", "Shahar kiritining");
         elInput.classList.remove("wrong");
 
@@ -26,7 +26,7 @@ function weatherUI(data) {
     divbody.setAttribute("class", "text-white bg-primary rounded p-5 d-flex justify-content-between mt-4");
     divbody.innerHTML = `
     <div>
-    <h1>${data.name}<sup class="badge bg-secondary">${data.sys.country}
+    <h1>${data.name}<sup>${data.sys.country}
     </sup></h1>
     <h2>Harorat: ${data.main.temp}&degC</h2>
     </div>
@@ -34,7 +34,7 @@ function weatherUI(data) {
     `
     elDiv.appendChild(divbody);
 
-        console.log(data);
+    console.log(data);
 
 }
 
